@@ -39,14 +39,14 @@ y = y + y2
 
 axarr[0].plot(x, y)
 
-n = len(y) 
+n = len(y)
 p = fft(y) # take the fourier transform 
 
 mag = np.sqrt(p.real**2 + p.imag**2)
 
 mag = mag * 2 / n
 
-mag = mag[0:math.ceil((n)/2.0)]
+mag = mag[:math.ceil((n)/2.0)]
 
 x = np.arange(0, len(mag), 1.0) * (sr / n)
 

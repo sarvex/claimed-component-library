@@ -6,6 +6,7 @@ License. To view a copy of this license, visit http://creativecommons.org/licens
 """
 
 
+
 import numpy as np
 
 import matplotlib.pyplot as plt
@@ -26,14 +27,14 @@ y = snd[:,0]
 
 plt.figure(figsize=(20, 8))
 
-n = len(y) 
+n = len(y)
 p = fft(y) 
 
 mag = np.sqrt(p.real**2 + p.imag**2)
 
 mag = mag * 2 / n
 
-mag = mag[0:math.ceil((n)/2.0)]
+mag = mag[:math.ceil((n)/2.0)]
 
 freq = np.arange(0, len(mag), 1.0) * (fs / n)
 
