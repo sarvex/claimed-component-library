@@ -24,4 +24,4 @@ df = spark.sql('select * from df')
 #df.write.csv('cos://claimed-spark-interactive.myCos/chat-en_us3.csv')
 df.writeTo("ibdb").create()
 
-print("count:"+str(df.count()))
+print(f"count:{str(df.count())}")

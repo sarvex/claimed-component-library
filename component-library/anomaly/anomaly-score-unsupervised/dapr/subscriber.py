@@ -31,7 +31,7 @@ logging.basicConfig(level = logging.INFO)
 @app.subscribe(pubsub_name='pubsub', topic='anomaly-data')
 def mytopic(event: v1.Event) -> None:
     data = json.loads(event.Data())
-    logging.info('Subscriber received: ' + str(data))
+    logging.info(f'Subscriber received: {str(data)}')
 
 app.run(6002)
 
